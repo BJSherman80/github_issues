@@ -1,0 +1,19 @@
+<head>
+</head>
+<body>
+<h1>Rails Issues</h1>
+<div class="sort_buttons">
+<%= button_to "Sort by Most Comments", issues_sort_path, method: :get, params: { :sort => 'max' }%>
+<%= button_to "Sort by Least Comments", issues_sort_path, method: :get%>
+</div>
+<% @issues.each do |issue| %>
+  <div class="issue">
+      <p> Label: <%= issue.labels%> </p>
+      <p> Title: <%= issue.title %> </p>
+      <p> User: <%= issue.user %> </p>
+      <p> State: <%= issue.state %> </p>
+      <p> Body: <%= issue.body %> </p>
+      <p> Comment Count: <%= issue.comments %> </p>
+  </div><br>
+<% end %>
+</body>
