@@ -5,6 +5,7 @@ describe Issue do
     attr = {
       title: 'bug',
       user: {login: "brett"},
+      labels:[{name: "actionmailer"}],
       state: "open",
       body: "There is a bug!",
       comments: 5

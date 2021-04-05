@@ -1,18 +1,18 @@
 class GithubService
 
     def self.get_data
-        issues = []
-        labels = ["actioncable","actionmailer","actionpack","actionview","activejob","activemodel","activerecord","activestorage","activesupport", "activepipeline"]
-            labels.each do |label|
-             response = conn.get("/repos/rails/rails/issues") do |req|
-                 req.params[:labels] = label
-                 req.params[:state] = "open"
-                 req.params[:assignee] = "none"
-                 req.params[:per_page] = 5
-             end
-            issues << JSON.parse(response.body, symbolize_names: true)
+      issues = []
+      labels = ["actioncable","actionmailer","actionpack","actionview","activejob","activemodel","activerecord","activestorage","activesupport", "activepipeline"]
+          labels.each do |label|
+            response = conn.get("/repos/rails/rails/issues") do |req|
+                req.params[:labels] = label
+                req.params[:state] = "open"
+                req.params[:assignee] = "none"
+                req.params[:per_page] = 5
             end
-     return issues.flatten
+            issues << JSON.parse(response.body, symbolize_names: true)
+          end
+      issues.flatten
     end
 
     # def self.get_data
