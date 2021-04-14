@@ -1,10 +1,9 @@
-<head>
-</head>
+
 <body>
 <h1>Rails Issues</h1>
 <div class="sort_buttons">
-<%= button_to "Sort by Most Comments", issues_sort_path, method: :get, params: { :sort => 'max' }%>
-<%= button_to "Sort by Least Comments", issues_sort_path, method: :get%>
+<%= button_to "Sort by Most Comments", root_path, method: :get, params: { :sort => 'desc' } %>
+<%= button_to "Sort by Least Comments", root_path, method: :get, params: { :sort => 'asc' } %>
 </div>
 <% @issues.each do |issue| %>
   <div class="issue">

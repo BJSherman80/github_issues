@@ -2,14 +2,14 @@ require 'rails_helper'
 
  describe 'github Service' do 
     it 'can get data from github api' do
-    search_results = GithubService.get_data
+    search_results = GithubService.get_data(nil)
       expect(search_results).to be_a(Array)
-      #first_result = search_results.first
-      expect(search_results.first).to have_key(:title)
-      expect(search_results.first).to have_key(:user)
-      expect(search_results.first[:user]).to have_key(:login)
-      expect(search_results.first).to have_key(:state)
-      expect(search_results.first).to have_key(:body)
-      expect(search_results.first).to have_key(:comments)
+      expect(search_results.first).to be_an(OpenStruct)
+      expect(search_results.first).to respond_to(:title)
+      expect(search_results.first).to respond_to(:user)
+      expect(search_results.first).to respond_to(:labels)
+      expect(search_results.first).to respond_to(:state)
+      expect(search_results.first).to respond_to(:body)
+      expect(search_results.first).to respond_to(:comments)
     end
  end

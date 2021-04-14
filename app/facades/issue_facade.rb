@@ -1,9 +1,5 @@
 class IssueFacade
-    def self.fetch_data
-        issues_data = GithubService.get_data
-
-        issues_data.map do |data|
-            Issue.new(data)
-        end
+    def self.fetch_data(sort)
+       GithubService.get_data(sort)
     end
 end
