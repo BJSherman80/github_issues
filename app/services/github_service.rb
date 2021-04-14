@@ -16,7 +16,7 @@ class GithubService
             OpenStruct.new({
               title: issue[:title],
               user: issue[:user][:login],
-              labels: issue[:labels] == nil || issue[:labels][0] == nil  ? "none" : issue[:labels][0][:name],
+              labels: issue[:labels][0] == nil  ? "none" : issue[:labels][0][:name],
               state: issue[:state],
               body: issue[:body],
               comments: issue[:comments]
