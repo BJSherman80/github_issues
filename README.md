@@ -7,7 +7,8 @@ Things you may want to cover:
 
 * Ruby version 2.6.0
 
-* Configuration: ```$ bundle install```
+* Configuration: ```$ bundle install``` then ``` figaro install ``` and add a variable in your application.yml file 
+as follows ```ACCESS_TOKEN: <'your git hub token'>```.
 
 * How to run the test suite: ```$ rspec```
 
