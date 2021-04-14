@@ -14,6 +14,6 @@ as follows ```ACCESS_TOKEN: <'your git hub token'>```.
 
 * Run app by running ```rails s``` then typing ```http://localhost:3000/``` into your browser.
 
-* High level Implementation: I consumed an API using a Facade pattern. I used OpenStruct and allowed for user to sort their comments. Issues are sorted by selected labels.
+* High level Implementation: I consumed an API using a Facade pattern. I used OpenStruct to create objects instead of POROS. I allowed for the user to sort their comments. Issues are filtered by selected labels.
 
 
